@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @Data
 @Document(collection = "Credential")
-public class Credential {
+public class CredentialDAO {
 	
 	private String userId;
 	private String personId;

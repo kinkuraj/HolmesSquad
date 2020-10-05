@@ -3,9 +3,9 @@ package com.holmessquad.holmessquad.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.holmessquad.holmessquad.entity.Credential;
+import com.holmessquad.holmessquad.entity.CredentialDAO;
 
 @Repository
-interface CredentialRepository extends MongoRepository<Credential, String> {
+public interface CredentialRepository extends MongoRepository<CredentialDAO, String> {
 
 }
