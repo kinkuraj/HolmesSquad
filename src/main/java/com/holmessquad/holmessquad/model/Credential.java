@@ -1,5 +1,7 @@
 package com.holmessquad.holmessquad.model;
 
+import org.springframework.http.ResponseEntity;
+
 public class Credential {
 
     private String username;
@@ -7,6 +9,8 @@ public class Credential {
     private String password;
 
     private boolean loginStatus;
+
+    private String role;
 
     public String getUsername() {
         return username;
@@ -30,5 +34,13 @@ public class Credential {
 
     public void setLoginStatus(boolean loginStatus) {
         this.loginStatus = loginStatus;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

@@ -1,57 +1,64 @@
 package com.holmessquad.holmessquad.controller;
 
 import com.holmessquad.holmessquad.model.Credential;
-import com.holmessquad.holmessquad.model.DateRange;
 import com.holmessquad.holmessquad.model.MedicalRecordQuery;
-import java.util.Date;
-
+import com.holmessquad.holmessquad.service.CredentialService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.holmessquad.holmessquad.model.Credential;
-import com.holmessquad.holmessquad.model.DateRange;
-import com.holmessquad.holmessquad.service.CredentialService;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class LoginController {
 
-	@Autowired
-	CredentialService credentialService;
- 
-	@GetMapping("/")
-    public String home(Model model){
+    private Map<String, String> users = new HashMap<>();
+
+    private Map<String, String> usersRole = new HashMap<>();
+
+    @Autowired
+    CredentialService credentialService;
+
+    @GetMapping("/")
+    public String home(Model model) {
         model.addAttribute("credential", new Credential());
         return "home";
     }
-    
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@ModelAttribute("credential") Credential credential, BindingResult result, Model model){
+    public String login(@ModelAttribute("credential") Credential credential, BindingResult result, Model model) {
+        users.put("jonita", "password");
+        users.put("kapil", "password");
+
+        usersRole.put("jonita", "PAT");
+        usersRole.put("kapil", "DOC");
         System.out.println(credential.getUsername());
         System.out.println(model.getAttribute("credential"));
-        credential.setLoginStatus(true);
-        DateRange dateRange = new DateRange();
-        dateRange.setDateFrom(new Date());
-        dateRange.setDateTo(new Date());
 
         model.addAttribute("medicalRecordQuery", new MedicalRecordQuery());
-        if("doctor".equals(credential.getPassword())){
-            return "doctor";
+
+        //credential = credentialService.doLogin(credential);
+        model.addAttribute("credential", credential);
+        //System.out.println(credential.isLoginStatus());
+        //System.out.println(credential.getRole());
+        /*if(credential.isLoginStatus()){
+            return "DOC".equals(credential.getRole()) ?"doctor":"patient";
+        }*/
+        if (users.containsKey(credential.getUsername()) && users.get(credential.getUsername()).equals(credential.getPassword())) {
+            return "DOC".equals(usersRole.get(credential.getUsername())) ? "doctor" : "patient";
         }
-        return "patient";
+        return "home";
     }
     
-    @GetMapping("v1/login")
+/*    @GetMapping("v1/login")
 	public ResponseEntity<Object> doLogin(
 			@RequestBody Credential credentials) {
 		return credentialService.doLogin(credentials);
-	}
+	}*/
 }

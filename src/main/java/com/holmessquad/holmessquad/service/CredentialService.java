@@ -6,5 +6,5 @@ import com.holmessquad.holmessquad.model.Credential;
 
 public interface CredentialService {
 
-	ResponseEntity<Object> doLogin(Credential credentials);
+	public Credential doLogin(Credential credentials);
 }

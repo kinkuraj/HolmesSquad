@@ -4,7 +4,9 @@
 package com.holmessquad.holmessquad.serviceimpl;
 
 import java.text.ParseException;
+import java.util.Optional;
 
+import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,26 +24,27 @@ import com.holmessquad.holmessquad.service.CredentialService;
 @Service
 public class CredentialServiceImpl implements CredentialService {
 
+	@Autowired
 	CredentialRepository credentialRepository;
 
     private ModelMapper modelMapper;
 	  
 	@Override
-	public ResponseEntity<Object> doLogin(Credential credentials) {
-		try {
-			CredentialDAO credentialDAO= convertToEntity(credentials);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public Credential doLogin(Credential credentials) {
+
+		Optional<CredentialDAO> cred = credentialRepository.findById(credentials.getUsername());
+		if(cred.isPresent() && StringUtils.equals(cred.get().getPassword(), credentials.getPassword())){
+			credentials.setRole(cred.get().getRole());
+			credentials.setLoginStatus(true);
+			return credentials;
 		}
-		credentialRepository.findById(credentials.getUsername());
-		return null;
+		credentials.setLoginStatus(false);
+		return credentials;
 		
 	}
-	
+
 	private CredentialDAO convertToEntity(Credential credential) throws ParseException {
 		CredentialDAO credentialDAO = modelMapper.map(credential, CredentialDAO.class);
-	   
-	    return null;
+	    return credentialDAO;
 	}
 }
