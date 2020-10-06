@@ -16,7 +16,7 @@ import lombok.Data;
 public class PatientDetails {
 
 	
-	private String patientNmae;
+	private String patientName;
 	private String patientID;
 	private String nationalId;
 	private String hospitalId;
