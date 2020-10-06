@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.holmessquad.holmessquad.serviceimpl;
+package com.holmessquad.holmessquad.service.impl;
 
 import java.text.ParseException;
 import java.util.Optional;

@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Login controller for user and admin logins
+ *
+ * */
 @Controller
 public class LoginController {
 
@@ -50,15 +54,12 @@ public class LoginController {
         /*if(credential.isLoginStatus()){
             return "DOC".equals(credential.getRole()) ?"doctor":"patient";
         }*/
+
+        //Mock login
         if (users.containsKey(credential.getUsername()) && users.get(credential.getUsername()).equals(credential.getPassword())) {
             return "DOC".equals(usersRole.get(credential.getUsername())) ? "doctor" : "patient";
         }
         return "home";
     }
     
-/*    @GetMapping("v1/login")
-	public ResponseEntity<Object> doLogin(
-			@RequestBody Credential credentials) {
-		return credentialService.doLogin(credentials);
-	}*/
 }

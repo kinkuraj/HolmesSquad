@@ -6,3 +6,7 @@ The medical history can be shared by patient to their doctor with ease using a t
 This will provide a transition from provider-centred care delivery model to patient-driven care delivery model.
 
 The interface can be used from both web and mobile and in local Indian and many foreign languages.
+
+How to run and test the project
+1. Clone the project
+2. ```mvnw spring-boot:run```

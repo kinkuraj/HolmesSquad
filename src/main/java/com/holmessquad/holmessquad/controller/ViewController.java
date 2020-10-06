@@ -20,6 +20,10 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * View controller for fetching medical records for patient, doctor and hospitals.
+ * Services are mocked at the moment.
+ * */
 @Controller
 public class ViewController {
 
