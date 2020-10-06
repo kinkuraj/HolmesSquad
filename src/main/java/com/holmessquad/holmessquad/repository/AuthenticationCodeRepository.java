@@ -13,6 +13,6 @@ import com.holmessquad.holmessquad.entity.AuthenticationCode;
  *
  */
 @Repository
-interface AuthenticationCodeRepository extends MongoRepository<AuthenticationCode, String> {
+public interface AuthenticationCodeRepository extends MongoRepository<AuthenticationCode, String> {
 
 }
