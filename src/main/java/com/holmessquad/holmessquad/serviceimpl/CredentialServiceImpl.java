@@ -23,8 +23,7 @@ import com.holmessquad.holmessquad.service.CredentialService;
 public class CredentialServiceImpl implements CredentialService {
 
 	CredentialRepository credentialRepository;
-	
-	@Autowired
+
     private ModelMapper modelMapper;
 	  
 	@Override

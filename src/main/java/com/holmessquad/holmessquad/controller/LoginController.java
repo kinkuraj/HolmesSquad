@@ -28,7 +28,8 @@ public class LoginController {
 	CredentialService credentialService;
  
 	@GetMapping("/")
-    public String home(){
+    public String home(Model model){
+        model.addAttribute("credential", new Credential());
         return "home";
     }
     

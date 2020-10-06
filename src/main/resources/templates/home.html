@@ -53,7 +53,7 @@
     <div id="google_translate_element" class="float-lg-right"></div>
     <div class="header-top wow fadeIn">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="../static/images/logo.png" th:src="@{/images/logo.png}"
+            <a class="navbar-brand" href="/"><img src="../static/images/logo.png" th:src="@{/images/logo.png}"
                                                   alt="image"></a>
             <div class="right-header">
                 <div class="header-info">
@@ -87,7 +87,7 @@
 
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a class="active" href="home.html">Home</a></li>
+                        <li><a class="active" href="/">Home</a></li>
 
                         <li><a data-scroll href="#service">Hospitals</a></li>
                         <li><a data-scroll href="#doctors">Doctors</a></li>
@@ -112,7 +112,7 @@
                         <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
                         </button>
                         </span>
-
+                            <td th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Enter username.</td>
                         </div>
 
                     </div>
