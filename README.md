@@ -10,6 +10,7 @@ The interface can be used from both web and mobile and in local Indian and many 
 ##How to run and test the project
 1. Clone the project
 2. ```mvnw spring-boot:run```
+3. logon to ```localhost:5000``` on your broser
 
 ##Home Page
 ![alt Home Page](docs/homepage.png)
