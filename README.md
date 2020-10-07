@@ -7,36 +7,37 @@ This will provide a transition from provider-centred care delivery model to pati
 
 The interface can be used from both web and mobile and in local Indian and many foreign languages.
 
-##How to run and test the project
+## How to run and test the project
 1. Clone the project
 2. ```mvnw spring-boot:run```
 3. Logon to ```localhost:5000``` on your browser
 
-Default Credentials for patient: </br>
-Username : jonita</br>
-Password: password</br>
 
-Default credentials for doctor:</br>
-Username: kapil</br>
-Password: password
+Default Credentials for patient:  
+Username : jonita  
+Password: password  
+
+ Default credentials for doctor:  
+Username: kapil  
+Password: password  
 
 Live Demo: http://medsaurus-env.eba-tgy5p253.ap-south-1.elasticbeanstalk.com/
 
-##Home Page
+## Home Page
 ![alt Home Page](docs/homepage.png)
 
-##Patient's Page
+## Patient's Page
 ![alt Patient's Page](docs/patientpage.png)
 
-##Doctor's Page
+## Doctor's Page
 ![alt Doctor's Page](docs/doctorpage.png)
 
-##Report
+## Report
 ![alt Report](docs/report1.png)
 
 ![alt Report](docs/report2.png)
 
-##Home page in local language
+## Home page in local language
 ![alt Report](docs/locallghmpage.png)
 
 ![alt Report](docs/locallghmpage2.png)
