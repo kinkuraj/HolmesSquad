@@ -12,13 +12,15 @@ The interface can be used from both web and mobile and in local Indian and many 
 2. ```mvnw spring-boot:run```
 3. Logon to ```localhost:5000``` on your browser
 
-Default Credentials for patient: 
-Username : jonita
+Default Credentials for patient: </br>
+Username : jonita</br>
+Password: password</br>
+
+Default credentials for doctor:</br>
+Username: kapil</br>
 Password: password
 
-Default credentials for doctor:
-Username: kapil
-Password: password
+Live Demo: http://medsaurus-env.eba-tgy5p253.ap-south-1.elasticbeanstalk.com/
 
 ##Home Page
 ![alt Home Page](docs/homepage.png)
