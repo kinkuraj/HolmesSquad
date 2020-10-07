@@ -12,6 +12,14 @@ The interface can be used from both web and mobile and in local Indian and many 
 2. ```mvnw spring-boot:run```
 3. Logon to ```localhost:5000``` on your browser
 
+Default Credentials for patient: 
+Username : jonita
+Password: password
+
+Default credentials for doctor:
+Username: kapil
+Password: password
+
 ##Home Page
 ![alt Home Page](docs/homepage.png)
 
